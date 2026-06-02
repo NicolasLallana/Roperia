@@ -1,5 +1,5 @@
 
-package Clases;
+package Impresiones;
 
 
 public class EscPos {

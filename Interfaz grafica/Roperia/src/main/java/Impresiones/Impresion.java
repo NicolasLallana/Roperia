@@ -1,6 +1,7 @@
 
-package Clases;
+package Impresiones;
 
+import Impresiones.EscPos;
 import java.io.ByteArrayOutputStream;
 
 

@@ -1,5 +1,5 @@
 
-package Clases;
+package Impresiones;
 
 
 public class Ticket {
@@ -15,9 +15,9 @@ public class Ticket {
         return "-".repeat(WIDTH) + "\n";
     }
 
-    public static String item(String name, double price) {
-        String p = String.format("$%.2f", price);
-        int espacio = WIDTH - name.length() - p.length();
-        return name + " ".repeat(Math.max(1, espacio)) + p + "\n";
+    public static String item(String nombre, double precio) {
+        String p = String.format("$%.2f", precio);
+        int espacio = WIDTH - nombre.length() - p.length();
+        return nombre + " ".repeat(Math.max(1, espacio)) + p + "\n";
     } 
 }

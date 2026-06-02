@@ -1,4 +1,4 @@
-package Clases;
+package Impresiones;
 
 import java.io.FileOutputStream;
 
