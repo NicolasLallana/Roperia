@@ -4,7 +4,7 @@ package Impresiones;
 
 public class Ticket {
     
-    private static final int WIDTH = 32;
+    private static final int WIDTH = 48;
 
     public static String centro(String text) {
         int padding = (WIDTH - text.length()) / 2;
