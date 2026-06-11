@@ -33,15 +33,13 @@ public class Ticket {
         return EscPos.INIT +
         EscPos.ALIGN_CENTER +
         EscPos.DOUBLE_SIZE +
-        "RoperiaJB!\n" + 
+        "RoperiaJB\n\n" + 
         EscPos.BOLD_ON +
-        EscPos.NUMBER_SIZE +
-        id +
+        id + "\n\n"  +
         EscPos.NORMAL_SIZE +
         EscPos.ALIGN_LEFT +
-        detalle +
-        "Probando impresión ESC/POS\n" +
-        "Total: " + total + "\n\n" +
+        detalle + "\n\n" +
+        "Total: $" + total + "\n\n\n\n\n\n" +
         EscPos.CUT;
     }
 }

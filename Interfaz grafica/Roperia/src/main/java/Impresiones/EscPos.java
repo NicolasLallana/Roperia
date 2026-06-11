@@ -15,7 +15,6 @@ public class EscPos {
     public static final String DOUBLE_HEIGHT    = "\u001B\u0021\u0010"; // Doble alto
     public static final String DOUBLE_WIDTH     = "\u001B\u0021\u0020"; // Doble ancho
     public static final String DOUBLE_SIZE      = "\u001B\u0021\u0030"; // Doble alto + ancho
-    public static final String NUMBER_SIZE      = "\u001B\u0021\u0060"; // Probando tamaños para numeros
 
     // -------------------------------
     //  Estilos
