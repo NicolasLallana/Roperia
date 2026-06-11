@@ -3,8 +3,8 @@ package Formularios;
 
 import Conexiones.ConexionBD;
 import Conexiones.ConsultasBD;
-import Impresiones.Impresion;
-import Impresiones.PuertoUSB;
+import Impresiones.ImpresionesWindows;
+import Impresiones.Ticket;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.sql.ResultSet;
@@ -178,11 +178,12 @@ public class frmVentanaConfirmacionVenta extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnconfirmarventaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnconfirmarventaActionPerformed
-        PuertoUSB usb;
+        Ticket ticket = new Ticket();
+        ImpresionesWindows imp = new ImpresionesWindows();
         try {
-            usb = PuertoUSB.detectar();
-            Impresion imp = new Impresion(usb);
-            imp.imprimirTicket();
+            for(int i = 1; i < 3; i++){
+                imp.imprimir(ticket.TicketParaImprimir(id));
+            }
         } catch (Exception ex) {
             ex.printStackTrace();
             JOptionPane.showMessageDialog(this, 

@@ -1,23 +1,47 @@
 
 package Impresiones;
 
+import Impresiones.EscPos;
+import Conexiones.ConsultasBD;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class Ticket {
     
-    private static final int WIDTH = 48;
+    public static String resultSetToTicket(ResultSet rs) throws SQLException {
+        StringBuilder sb = new StringBuilder();
+        while (rs.next()) {
+            String producto = rs.getString("Productos");
+            int cantidad = rs.getInt("Cant");
+            float precio = rs.getFloat("Precio");
+            sb.append(producto)
+            .append("  x")
+            .append(cantidad)
+            .append("  $")
+            .append(precio)
+            .append("\n");
+        }
 
-    public static String centro(String text) {
-        int padding = (WIDTH - text.length()) / 2;
-        return " ".repeat(Math.max(0, padding)) + text + "\n";
+        return sb.toString();
     }
 
-    public static String linea() {
-        return "-".repeat(WIDTH) + "\n";
+    
+    public String TicketParaImprimir(int id) throws SQLException{
+        ResultSet rs = ConsultasBD.ListarVenta(id);
+        String detalle = resultSetToTicket(rs);
+        String total = String.valueOf(ConsultasBD.TotalVenta(id));
+        return EscPos.INIT +
+        EscPos.ALIGN_CENTER +
+        EscPos.DOUBLE_SIZE +
+        "RoperiaJB!\n" + 
+        EscPos.BOLD_ON +
+        EscPos.NUMBER_SIZE +
+        id +
+        EscPos.NORMAL_SIZE +
+        EscPos.ALIGN_LEFT +
+        detalle +
+        "Probando impresión ESC/POS\n" +
+        "Total: " + total + "\n\n" +
+        EscPos.CUT;
     }
-
-    public static String item(String nombre, double precio) {
-        String p = String.format("$%.2f", precio);
-        int espacio = WIDTH - nombre.length() - p.length();
-        return nombre + " ".repeat(Math.max(1, espacio)) + p + "\n";
-    } 
 }
