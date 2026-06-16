@@ -9,3 +9,10 @@ DROP TABLE IF EXISTS Ventas;
 CREATE TABLE IF NOT EXISTS Ventas(Id_Venta INT NOT NULL, Producto_Id INT NOT NULL,
 FOREIGN KEY (Producto_Id) REFERENCES Productos(Id_Producto), Cantidad INT NOT NULL, Fechahora DATETIME);
 
+INSERT INTO Productos (Descripcion, Precio)
+VALUES ('MOCHILA',100),
+('CARTERA',100),
+('PRENDA',100),
+('CHICLES',100),
+('CHUPETIN',100),
+('ALFAJOR',100);
