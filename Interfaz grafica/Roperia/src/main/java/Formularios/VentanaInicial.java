@@ -24,7 +24,7 @@ public class VentanaInicial extends javax.swing.JFrame {
         btnsalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("ROPERIA JB VERSION 1.0");
+        setTitle("ROPERIA JB VERSION 1.1");
         setIconImages(null);
         setName("frminicial"); // NOI18N
 

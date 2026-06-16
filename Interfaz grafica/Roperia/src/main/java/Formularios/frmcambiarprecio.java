@@ -2,6 +2,7 @@
 package Formularios;
 
 import javax.swing.ImageIcon;
+import Conexiones.ConsultasBD;
 
 
 public class frmcambiarprecio extends javax.swing.JFrame {
@@ -165,25 +166,33 @@ public class frmcambiarprecio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnchiclesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnchiclesActionPerformed
-        frmnuevoprecio ventana = new frmnuevoprecio(5);
+        String nombreprod = btnchicles.getText();
+        int nro = ConsultasBD.IdProducto(nombreprod);
+        frmnuevoprecio ventana = new frmnuevoprecio(nro);
         ventana.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnchiclesActionPerformed
 
     private void btnprendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnprendaActionPerformed
-        frmnuevoprecio ventana = new frmnuevoprecio(3);
+        String nombreprod = btnprenda.getText();
+        int nro = ConsultasBD.IdProducto(nombreprod);
+        frmnuevoprecio ventana = new frmnuevoprecio(nro);
         ventana.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnprendaActionPerformed
 
     private void btnmochilaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmochilaActionPerformed
-        frmnuevoprecio ventana = new frmnuevoprecio(1);
+        String nombreprod = btnmochila.getText();
+        int nro = ConsultasBD.IdProducto(nombreprod);
+        frmnuevoprecio ventana = new frmnuevoprecio(nro);
         ventana.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnmochilaActionPerformed
 
     private void btncarteraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncarteraActionPerformed
-        frmnuevoprecio ventana = new frmnuevoprecio(2);
+        String nombreprod = btncartera.getText();
+        int nro = ConsultasBD.IdProducto(nombreprod);
+        frmnuevoprecio ventana = new frmnuevoprecio(nro);
         ventana.setVisible(true);
         dispose();
     }//GEN-LAST:event_btncarteraActionPerformed
@@ -193,13 +202,17 @@ public class frmcambiarprecio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnsalirActionPerformed
 
     private void btnchupetinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnchupetinActionPerformed
-        frmnuevoprecio ventana = new frmnuevoprecio(6);
+        String nombreprod = btnchupetin.getText();
+        int nro = ConsultasBD.IdProducto(nombreprod);
+        frmnuevoprecio ventana = new frmnuevoprecio(nro);
         ventana.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnchupetinActionPerformed
 
     private void btnalfajorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnalfajorActionPerformed
-        frmnuevoprecio ventana = new frmnuevoprecio(7);
+        String nombreprod = btnalfajor.getText();
+        int nro = ConsultasBD.IdProducto(nombreprod);
+        frmnuevoprecio ventana = new frmnuevoprecio(nro);
         ventana.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnalfajorActionPerformed
